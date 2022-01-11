@@ -40,6 +40,46 @@ or the program is largely incomplete.
 # Example2: input = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb" output = True (the two numbers sum to 10)
 # weight = 8
 
-def question_mark():
-    return 
+def question_mark(example1):
+    sum=0
+    sum_of_number=0
+    list1=[]
+    list2=[]
+    for i in example1:
+        for j in range(0,10): #本文里面的数字属于String
+            if i==str(j):    
+                sum+=1
+                sum_of_number+=int(i)
+    print(sum)
+    print(sum_of_number)
+    if sum !=2 and sum_of_number != 10:
+        return False 
+    else:
+        for i in range(len(example1)):
+            for j in range(0,10):
+                if example1[i]==str(j):
+                    list1.append(i)
+            
+        for i in example1[list1[0]:list1[-1]+1]:
+            list2.append(i)
+        print(list2)
+    a="?"
+    sum_of_Question_mark=0
 
+    for i in list2:
+        if i == a:
+            sum_of_Question_mark+=1
+    
+    if sum_of_Question_mark==3 and sum_of_number==10:
+
+        return True
+    else:
+        return False
+    
+
+
+
+
+input = "sdfhdsl4??sfasdfga?1sdjkfhbdsjhfk" 
+input2 = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb"
+print(question_mark(input2))

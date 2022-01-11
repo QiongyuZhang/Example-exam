@@ -34,10 +34,25 @@ or the program is largely incomplete.
 # whose keys are all strings.
 # weight = 2
 
-def longest_key():
-    return 
+def longest_key(dictionary):
+    list1=[]
+    list2=""
+    for i in dictionary.keys():
+        list1.append(i)
+    for i in range(0,len(list1)-1):
+        if len(list1[i])>len(list1[i+1]):
+            a=list1[i]
+            list1[i]=list1[i+1]
+            list1[i+1]=a
+    
+    
+    return list1[-1]
+
+ 
+                
+    
 
 
-
-
+dict={"number":1,"number26780":4,"number3":8,"number4":10,"number1223":2}
+print(longest_key(dict))
 

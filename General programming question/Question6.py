@@ -34,6 +34,34 @@ or the program is largely incomplete.
 # input dictionary whose values are all whole numbers (values, not keys).
 # # weight = 5 
 
-def value_greatest_even():
-    return 
+def value_greatest_even(dictionary1):
+    list1=[]
+    
+    for i in dictionary1.values():
+        if i % 2==0:
+            list1.append(i)
+    print(list1)
+    
+    
+ 
+    '''for i in range(len(list1)-1):
+        if list1[i]>list1[i+1]:
+            a=list1[i]
+            list1[i]=list1[i+1]
+            list1[i+1]=a'''
+    
+    for i in range(len(list1)):
+        for j in range(i+1,len(list1)):
+            if list1[i]>list1[j]:
+                a=list1[i]
+                list1[i]=list1[j]
+                list1[j]=a
+    print(list1)
+            
+    
 
+    
+
+
+dict={"number":1,"number2":8,"number3":2,"number4":10,"number5":4}
+print(value_greatest_even(dict))
